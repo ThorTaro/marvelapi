@@ -16,6 +16,7 @@
 		50690DAE21C7A24F0056B5BA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50690DAD21C7A24F0056B5BA /* ViewModel.swift */; };
 		50690DB021C7A2750056B5BA /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50690DAF21C7A2750056B5BA /* Cell.swift */; };
 		50690DB221C7A2A50056B5BA /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50690DB121C7A2A40056B5BA /* CharacterListViewController.swift */; };
+		50E228E221C7BD780049911F /* Marvel-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E228E121C7BD780049911F /* Marvel-logo.png */; };
 		9F3269E1372B9DDF30E61739 /* Pods_marvelapi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D222A0D148B30600A5653ED /* Pods_marvelapi.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		50690DAD21C7A24F0056B5BA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		50690DAF21C7A2750056B5BA /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		50690DB121C7A2A40056B5BA /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
+		50E228E121C7BD780049911F /* Marvel-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Marvel-logo.png"; sourceTree = SOURCE_ROOT; };
 		8C961DCD08F5B88E303337DD /* Pods-marvelapi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelapi.debug.xcconfig"; path = "Target Support Files/Pods-marvelapi/Pods-marvelapi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +72,7 @@
 		50690D9321C7A1070056B5BA /* marvelapi */ = {
 			isa = PBXGroup;
 			children = (
+				50E228E121C7BD780049911F /* Marvel-logo.png */,
 				50690D9421C7A1070056B5BA /* AppDelegate.swift */,
 				50690D9621C7A1070056B5BA /* SearchViewController.swift */,
 				50690DB121C7A2A40056B5BA /* CharacterListViewController.swift */,
@@ -163,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50690D9C21C7A1080056B5BA /* Assets.xcassets in Resources */,
+				50E228E221C7BD780049911F /* Marvel-logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

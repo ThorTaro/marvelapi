@@ -9,9 +9,19 @@
 import UIKit
 
 class SearchViewController: UIViewController {
+    private lazy var marvelImage:UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "Marvel-logo.png"))
+            imageView.backgroundColor = .white
+            imageView.frame = CGRect(x: self.view.frame.width/12,
+                                     y: self.view.frame.height/12 * 2,
+                                     width: self.view.frame.width/12 * 10,
+                                     height: self.view.frame.height/12 * 2 )
+        return imageView
+    }()
+    
     private lazy var searchBar:UISearchBar = {
         let bar = UISearchBar()
-        bar.frame = CGRect(x: self.view.frame.width/20, y: self.view.frame.height/4, width: self.view.frame.width/20 * 18, height: self.view.frame.height/20)
+        bar.frame = CGRect(x: self.view.frame.width/20, y: self.view.frame.height/5 * 2, width: self.view.frame.width/20 * 18, height: self.view.frame.height/20)
         bar.placeholder = "Name starts with...?"
         bar.delegate = self
         bar.backgroundColor = .white
@@ -26,11 +36,9 @@ class SearchViewController: UIViewController {
                               y: self.searchBar.frame.maxY + self.searchBar.frame.height,
                               width: self.view.frame.width/20 * 8,
                               height: self.view.frame.height/16)
-        button.layer.borderWidth = 3.0
-        button.layer.borderColor = UIColor.white.cgColor
         button.backgroundColor = .red
         button.setTitle("Search!", for: UIControl.State())
-        button.titleLabel?.font = UIFont.systemFont(ofSize: CGFloat(button.frame.height/2))
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: CGFloat(button.frame.height/2))
         button.setTitleColor(.white, for: UIControl.State())
         button.titleLabel?.textAlignment = .center
         button.addTarget(self, action:#selector(didTapButton),
@@ -47,9 +55,10 @@ class SearchViewController: UIViewController {
     }
     
     private func setupUI(){
-        view.backgroundColor = .red
+        view.backgroundColor = .black
         view.addSubview(searchBar)
         view.addSubview(button)
+        view.addSubview(marvelImage)
         
     }
     

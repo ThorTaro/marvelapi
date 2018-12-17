@@ -65,11 +65,6 @@ class tableviewCell:UITableViewCell{
     }
     
     public func loadImage(imageURL:URL){
-        //        let url = URL(string: imageURL)
-        //        self.characterView.kf.indicatorType = .activity
-        //        if let setURL = url {
-        //            self.characterView.kf.setImage(with: setURL, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
-        //        }
         self.characterView.kf.indicatorType = .activity
         self.characterView.kf.setImage(with: imageURL)
     }

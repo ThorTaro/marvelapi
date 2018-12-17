@@ -20,7 +20,7 @@ class CharacterListViewController: UIViewController {
             case .Init:
                 self.label.isHidden = true
             case .Loading:
-                self.label.text = "Loading"
+                self.label.text = "Loading..."
             case .Result:
                 self.label.isHidden = true
             case .NotFound:
@@ -46,8 +46,10 @@ class CharacterListViewController: UIViewController {
     
     private lazy var label: UILabel = {
         let label = UILabel()
-        label.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height/16)
-        label.center = self.view.center
+        label.frame = CGRect(x: 0,
+                             y: self.view.frame.height/8 * 3,
+                             width: self.view.frame.width,
+                             height: self.view.frame.height/16)
         label.backgroundColor = .red
         label.textColor = .white
         label.textAlignment = .center
@@ -90,6 +92,7 @@ class CharacterListViewController: UIViewController {
                 weakself.characters = result
                 if weakself.characters.count != 0 {
                     weakself.view.addSubview(weakself.tableView)
+                    weakself.title = "Result: \(weakself.characters.count) characters"
                     weakself.state = .Result
                 } else {
                     weakself.state = .NotFound
