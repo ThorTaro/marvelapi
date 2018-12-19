@@ -39,7 +39,6 @@ class CharacterListViewController: UIViewController {
         table.separatorColor = .white
         table.backgroundColor = .black
         table.register(tableviewCell.self, forCellReuseIdentifier: NSStringFromClass(tableviewCell.self))
-        table.rowHeight = table.frame.height/8
         table.delegate = self
         table.dataSource = self
         return table
@@ -72,6 +71,7 @@ class CharacterListViewController: UIViewController {
             let window = UIApplication.shared.keyWindow
             let bottom = window?.safeAreaInsets.bottom
             tableView.frame.size.height = self.view.frame.height - (bottom ?? 0)
+            tableView.rowHeight = tableView.frame.height/4
         }
     }
     
@@ -114,10 +114,14 @@ extension CharacterListViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(tableviewCell.self), for: indexPath) as! tableviewCell
-        cell.setImage(size: CGRect(x: self.tableView.rowHeight/20,
-                                   y: self.tableView.rowHeight/20,
-                                   width: self.tableView.rowHeight/20 * 18,
-                                   height: self.tableView.rowHeight/20 * 18))
+//        cell.setImage(size: CGRect(x: self.tableView.rowHeight/20,
+//                                   y: self.tableView.rowHeight/20,
+//                                   width: self.tableView.rowHeight/20 * 18,
+//                                   height: self.tableView.rowHeight/20 * 18))
+        cell.setImage(size: CGRect(x:0,
+                                   y:0,
+                                   width:self.tableView.bounds.width,
+                                   height:self.tableView.rowHeight))
         cell.setName(size: CGRect(x: cell.characterView.frame.maxX/20 * 21,
                                   y: 0,
                                   width: self.tableView.bounds.width - cell.characterView.frame.maxX,

@@ -13,7 +13,8 @@ class tableviewCell:UITableViewCell{
     public let characterView:UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .black
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -55,14 +56,14 @@ class tableviewCell:UITableViewCell{
         nameLabel.frame = size
         nameLabel.text = text
         nameLabel.font = UIFont.systemFont(ofSize: CGFloat(nameLabel.frame.height * 0.6))
-        self.contentView.addSubview(nameLabel)
+//        self.contentView.addSubview(nameLabel)
     }
     
     public func setDescription(size:CGRect, text:String){
         descriptionLabel.frame = size
         descriptionLabel.text = text == "" ? "No description":text
         descriptionLabel.font = UIFont.systemFont(ofSize: CGFloat(descriptionLabel.frame.height * 0.8))
-        self.contentView.addSubview(descriptionLabel)
+//        self.contentView.addSubview(descriptionLabel)
     }
     
     public func loadImage(imageURL:URL){
