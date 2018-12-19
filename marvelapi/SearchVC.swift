@@ -78,9 +78,9 @@ class SearchViewController: UIViewController {
     @objc func goNextVC(){
         guard let text = searchBar.text else { return }
         if !text.isEmpty {
-            let nextVC = CharacterListViewController()
-            nextVC.searchWord = text
-            self.navigationController?.pushViewController(nextVC, animated: true)
+            let characterListVC = CharacterListViewController()
+            characterListVC.searchWord = text
+            self.navigationController?.pushViewController(characterListVC, animated: true)
         } else {
             return
         }
@@ -98,6 +98,50 @@ class SearchViewController: UIViewController {
             sender.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.configureObserver()
+    }
+    
+    private func configureObserver(){
+        let notification = NotificationCenter.default
+        notification.addObserver(self,
+                                 selector: #selector(keyboardWillShow(notification:)),
+                                 name: UIResponder.keyboardWillShowNotification,
+                                 object: nil)
+        notification.addObserver(self,
+                                 selector: #selector(keyboardWillHide(notification:)),
+                                 name: UIResponder.keyboardWillHideNotification,
+                                 object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.removeObserver()
+    }
+    
+    @objc func keyboardWillShow(notification: Notification?){
+        let rect = (notification?.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+        let duration: TimeInterval? = notification?.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double
+        UIView.animate(withDuration: duration!){ () in
+            let transform = CGAffineTransform(translationX: 0, y: -(rect?.size.height)!)
+            self.view.transform = transform
+        }
+    }
+    
+    private func removeObserver(){
+        let notification = NotificationCenter.default
+        notification.removeObserver(self)
+    }
+    
+    @objc func keyboardWillHide(notification: Notification?){
+        let duration: TimeInterval? = notification?.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? Double
+        UIView.animate(withDuration: duration!){ () in
+            self.view.transform = CGAffineTransform.identity
+        }
+    }
+    
 }
 
 extension SearchViewController:UISearchBarDelegate{

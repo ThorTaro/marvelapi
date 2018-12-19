@@ -12,7 +12,8 @@ import Kingfisher
 class tableviewCell:UITableViewCell{
     public let characterView:UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .white
+        imageView.backgroundColor = .black
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -36,7 +37,7 @@ class tableviewCell:UITableViewCell{
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
         layoutMargins = .zero
         preservesSuperviewLayoutMargins = false
-        backgroundColor = .red
+        backgroundColor = .black
         textLabel?.adjustsFontSizeToFitWidth = true
         textLabel?.numberOfLines = 0
     }

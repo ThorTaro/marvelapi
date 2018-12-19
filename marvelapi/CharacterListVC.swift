@@ -37,9 +37,10 @@ class CharacterListViewController: UIViewController {
         table.tableFooterView = UIView(frame: .zero)
         table.separatorInset = UIEdgeInsets.zero
         table.separatorColor = .white
-        table.backgroundColor = .red
+        table.backgroundColor = .black
         table.register(tableviewCell.self, forCellReuseIdentifier: NSStringFromClass(tableviewCell.self))
         table.rowHeight = table.frame.height/8
+        table.delegate = self
         table.dataSource = self
         return table
     }()
@@ -50,7 +51,7 @@ class CharacterListViewController: UIViewController {
                              y: self.view.frame.height/8 * 3,
                              width: self.view.frame.width,
                              height: self.view.frame.height/16)
-        label.backgroundColor = .red
+        label.backgroundColor = .black
         label.textColor = .white
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: CGFloat(label.frame.height * 0.8))
@@ -75,7 +76,7 @@ class CharacterListViewController: UIViewController {
     }
     
     private func setupUI(){
-        view.backgroundColor = .red
+        view.backgroundColor = .black
         view.addSubview(label)
     }
     
@@ -105,7 +106,7 @@ class CharacterListViewController: UIViewController {
 }
 
 
-extension CharacterListViewController:UITableViewDataSource, UITableViewDelegate{
+extension CharacterListViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return characters.count
@@ -129,6 +130,13 @@ extension CharacterListViewController:UITableViewDataSource, UITableViewDelegate
                             text: characters[indexPath.row].description)
         cell.loadImage(imageURL: characters[indexPath.row].thumbnail.url)
         return cell
+    }
+}
+
+extension CharacterListViewController:UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let characterDetailVC = CharacterDetailViewController(characterID: characters[indexPath.row].id, imageURL:characters[indexPath.row].thumbnail.url)
+        self.navigationController?.pushViewController(characterDetailVC, animated: true)
     }
 }
 

@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		50690D9521C7A1070056B5BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50690D9421C7A1070056B5BA /* AppDelegate.swift */; };
-		50690D9721C7A1070056B5BA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50690D9621C7A1070056B5BA /* SearchViewController.swift */; };
+		50690D9721C7A1070056B5BA /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50690D9621C7A1070056B5BA /* SearchVC.swift */; };
 		50690D9C21C7A1080056B5BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50690D9B21C7A1080056B5BA /* Assets.xcassets */; };
 		50690DA721C7A1AE0056B5BA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50690DA621C7A1AE0056B5BA /* Model.swift */; };
 		50690DAA21C7A2110056B5BA /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50690DA921C7A2110056B5BA /* String+MD5.swift */; };
 		50690DAC21C7A22A0056B5BA /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50690DAB21C7A22A0056B5BA /* JSON.swift */; };
 		50690DAE21C7A24F0056B5BA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50690DAD21C7A24F0056B5BA /* ViewModel.swift */; };
 		50690DB021C7A2750056B5BA /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50690DAF21C7A2750056B5BA /* Cell.swift */; };
-		50690DB221C7A2A50056B5BA /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50690DB121C7A2A40056B5BA /* CharacterListViewController.swift */; };
+		50690DB221C7A2A50056B5BA /* CharacterListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50690DB121C7A2A40056B5BA /* CharacterListVC.swift */; };
+		50A091EB21C90BFD001500FE /* CharacterDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A091EA21C90BFD001500FE /* CharacterDetailVC.swift */; };
 		50E228E221C7BD780049911F /* Marvel-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E228E121C7BD780049911F /* Marvel-logo.png */; };
 		9F3269E1372B9DDF30E61739 /* Pods_marvelapi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D222A0D148B30600A5653ED /* Pods_marvelapi.framework */; };
 /* End PBXBuildFile section */
@@ -25,7 +26,7 @@
 		2D222A0D148B30600A5653ED /* Pods_marvelapi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marvelapi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50690D9121C7A1070056B5BA /* marvelapi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marvelapi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50690D9421C7A1070056B5BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		50690D9621C7A1070056B5BA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		50690D9621C7A1070056B5BA /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		50690D9B21C7A1080056B5BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50690DA021C7A1080056B5BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50690DA621C7A1AE0056B5BA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -34,7 +35,8 @@
 		50690DAB21C7A22A0056B5BA /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		50690DAD21C7A24F0056B5BA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		50690DAF21C7A2750056B5BA /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
-		50690DB121C7A2A40056B5BA /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
+		50690DB121C7A2A40056B5BA /* CharacterListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListVC.swift; sourceTree = "<group>"; };
+		50A091EA21C90BFD001500FE /* CharacterDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailVC.swift; sourceTree = "<group>"; };
 		50E228E121C7BD780049911F /* Marvel-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Marvel-logo.png"; sourceTree = SOURCE_ROOT; };
 		8C961DCD08F5B88E303337DD /* Pods-marvelapi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelapi.debug.xcconfig"; path = "Target Support Files/Pods-marvelapi/Pods-marvelapi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,8 +76,9 @@
 			children = (
 				50E228E121C7BD780049911F /* Marvel-logo.png */,
 				50690D9421C7A1070056B5BA /* AppDelegate.swift */,
-				50690D9621C7A1070056B5BA /* SearchViewController.swift */,
-				50690DB121C7A2A40056B5BA /* CharacterListViewController.swift */,
+				50690D9621C7A1070056B5BA /* SearchVC.swift */,
+				50690DB121C7A2A40056B5BA /* CharacterListVC.swift */,
+				50A091EA21C90BFD001500FE /* CharacterDetailVC.swift */,
 				50690DAF21C7A2750056B5BA /* Cell.swift */,
 				50690DAD21C7A24F0056B5BA /* ViewModel.swift */,
 				50690DA621C7A1AE0056B5BA /* Model.swift */,
@@ -233,10 +236,11 @@
 				50690DA721C7A1AE0056B5BA /* Model.swift in Sources */,
 				50690DAC21C7A22A0056B5BA /* JSON.swift in Sources */,
 				50690DB021C7A2750056B5BA /* Cell.swift in Sources */,
-				50690D9721C7A1070056B5BA /* SearchViewController.swift in Sources */,
-				50690DB221C7A2A50056B5BA /* CharacterListViewController.swift in Sources */,
+				50690D9721C7A1070056B5BA /* SearchVC.swift in Sources */,
+				50690DB221C7A2A50056B5BA /* CharacterListVC.swift in Sources */,
 				50690D9521C7A1070056B5BA /* AppDelegate.swift in Sources */,
 				50690DAE21C7A24F0056B5BA /* ViewModel.swift in Sources */,
+				50A091EB21C90BFD001500FE /* CharacterDetailVC.swift in Sources */,
 				50690DAA21C7A2110056B5BA /* String+MD5.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +370,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2H38Y695RH;
 				INFOPLIST_FILE = marvelapi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -385,6 +390,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2H38Y695RH;
 				INFOPLIST_FILE = marvelapi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
