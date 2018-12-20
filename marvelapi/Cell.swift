@@ -23,15 +23,18 @@ class tableviewCell:UITableViewCell{
         label.backgroundColor = .clear
         label.text = "Hero name"
         label.textColor = .white
+        label.numberOfLines = 0
+        label.textAlignment = .right
         return label
     }()
     
-    public let descriptionLabel:UILabel = {
-        let label = UILabel()
-        label.backgroundColor = .clear
-        label.text = "Description"
-        label.textColor = .white
-        return label
+    public let gradationLabel:CAGradientLayer = {
+        let gradientLayer = CAGradientLayer()
+        let colorTop = UIColor.clear
+        let blackColor = UIColor.black
+        let colorBottom = blackColor.withAlphaComponent(0.9)
+        gradientLayer.colors = [colorTop.cgColor, colorBottom.cgColor]
+        return gradientLayer
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -55,15 +58,13 @@ class tableviewCell:UITableViewCell{
     public func setName(size:CGRect, text:String){
         nameLabel.frame = size
         nameLabel.text = text
-        nameLabel.font = UIFont.systemFont(ofSize: CGFloat(nameLabel.frame.height * 0.6))
-//        self.contentView.addSubview(nameLabel)
+        nameLabel.font = UIFont.systemFont(ofSize: CGFloat(nameLabel.frame.height/3))
+        self.contentView.addSubview(nameLabel)
     }
     
-    public func setDescription(size:CGRect, text:String){
-        descriptionLabel.frame = size
-        descriptionLabel.text = text == "" ? "No description":text
-        descriptionLabel.font = UIFont.systemFont(ofSize: CGFloat(descriptionLabel.frame.height * 0.8))
-//        self.contentView.addSubview(descriptionLabel)
+    public func setGradation(size:CGRect){
+        gradationLabel.frame = size
+        self.characterView.layer.insertSublayer(gradationLabel, at: 0)
     }
     
     public func loadImage(imageURL:URL){

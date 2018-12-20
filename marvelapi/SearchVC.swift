@@ -9,6 +9,7 @@
 import UIKit
 
 class SearchViewController: UIViewController {
+    
     private lazy var marvelImage:UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "Marvel-logo.png"))
             imageView.backgroundColor = .white
@@ -63,11 +64,11 @@ class SearchViewController: UIViewController {
     }
     
     private func setupNavUI(){
-        title = "Search"
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.red]
-        self.navigationController?.navigationBar.barTintColor = .white
-        self.navigationController?.navigationBar.tintColor = .red
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        self.navigationController?.navigationBar.barTintColor = .black
+        self.navigationController?.navigationBar.tintColor = .white
         self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.topItem?.title = " "
     }
     
     @objc func didTapButton(sender: UIButton){
@@ -153,5 +154,3 @@ extension SearchViewController:UISearchBarDelegate{
         self.didTapButton(sender: button)
     }
 }
-
-
