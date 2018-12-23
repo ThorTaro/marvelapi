@@ -1,7 +1,8 @@
 # marvelapi
 Marvel comic API training with Moya Swift
 
-----Sorry, my English is not good...----
+*Sorry, my English is not good...*
+
 This project is my iOS programming training with Moya Swift and Marvel comic API.
 
 How to use this app
