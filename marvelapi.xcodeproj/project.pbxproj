@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5065AC5421CE2F8B009B5AB5 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 5065AC5321CE2F8B009B5AB5 /* home.png */; };
 		50690D9521C7A1070056B5BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50690D9421C7A1070056B5BA /* AppDelegate.swift */; };
 		50690D9721C7A1070056B5BA /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50690D9621C7A1070056B5BA /* SearchVC.swift */; };
 		50690D9C21C7A1080056B5BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50690D9B21C7A1080056B5BA /* Assets.xcassets */; };
@@ -17,13 +18,13 @@
 		50690DB021C7A2750056B5BA /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50690DAF21C7A2750056B5BA /* Cell.swift */; };
 		50690DB221C7A2A50056B5BA /* CharacterListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50690DB121C7A2A40056B5BA /* CharacterListVC.swift */; };
 		50A091EB21C90BFD001500FE /* CharacterDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A091EA21C90BFD001500FE /* CharacterDetailVC.swift */; };
-		50E228E221C7BD780049911F /* Marvel-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E228E121C7BD780049911F /* Marvel-logo.png */; };
 		9F3269E1372B9DDF30E61739 /* Pods_marvelapi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D222A0D148B30600A5653ED /* Pods_marvelapi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0BC95CA1513C211217063C58 /* Pods-marvelapi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelapi.release.xcconfig"; path = "Target Support Files/Pods-marvelapi/Pods-marvelapi.release.xcconfig"; sourceTree = "<group>"; };
 		2D222A0D148B30600A5653ED /* Pods_marvelapi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marvelapi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5065AC5321CE2F8B009B5AB5 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		50690D9121C7A1070056B5BA /* marvelapi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marvelapi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50690D9421C7A1070056B5BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50690D9621C7A1070056B5BA /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
@@ -37,7 +38,6 @@
 		50690DAF21C7A2750056B5BA /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		50690DB121C7A2A40056B5BA /* CharacterListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListVC.swift; sourceTree = "<group>"; };
 		50A091EA21C90BFD001500FE /* CharacterDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailVC.swift; sourceTree = "<group>"; };
-		50E228E121C7BD780049911F /* Marvel-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Marvel-logo.png"; sourceTree = SOURCE_ROOT; };
 		8C961DCD08F5B88E303337DD /* Pods-marvelapi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelapi.debug.xcconfig"; path = "Target Support Files/Pods-marvelapi/Pods-marvelapi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,7 +74,7 @@
 		50690D9321C7A1070056B5BA /* marvelapi */ = {
 			isa = PBXGroup;
 			children = (
-				50E228E121C7BD780049911F /* Marvel-logo.png */,
+				5065AC5321CE2F8B009B5AB5 /* home.png */,
 				50690D9421C7A1070056B5BA /* AppDelegate.swift */,
 				50690D9621C7A1070056B5BA /* SearchVC.swift */,
 				50690DB121C7A2A40056B5BA /* CharacterListVC.swift */,
@@ -169,7 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50690D9C21C7A1080056B5BA /* Assets.xcassets in Resources */,
-				50E228E221C7BD780049911F /* Marvel-logo.png in Resources */,
+				5065AC5421CE2F8B009B5AB5 /* home.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

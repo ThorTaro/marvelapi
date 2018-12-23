@@ -7,58 +7,68 @@
 //
 
 import UIKit
-import Kingfisher
-
 
 class CharacterListViewController: UIViewController {
-    public var searchWord:String = "searchWord"
+    private var searchWord: String = "searchWord"
     private let model = ListViewModel()
     private var characters = [Characters]()
-    private var state:State = .Init {
+    private var state: State = .Init {
         didSet{
             switch state {
             case .Init:
-                self.label.isHidden = true
+                self.statusLabel.isHidden = true
             case .Loading:
-                self.label.text = "Loading..."
+                self.statusLabel.text = "Loading..."
             case .Result:
-                self.label.isHidden = true
+                self.statusLabel.isHidden = true
+                self.view.addSubview(characterListView)
             case .NotFound:
-                self.label.text = "Not Found"
+                self.statusLabel.text = "Not Found"
             case .Error:
-                self.label.text = "Error"
+                self.statusLabel.text = "Error"
             }
         }
     }
     
-    private lazy var tableView:UITableView = {
+    private lazy var characterListView:UITableView = {
         let table = UITableView()
-        table.frame = self.view.frame
-        table.tableFooterView = UIView(frame: .zero)
-        table.backgroundColor = .black
-        table.register(tableviewCell.self, forCellReuseIdentifier: NSStringFromClass(tableviewCell.self))
-        table.separatorStyle = .none
-        table.delegate = self
-        table.dataSource = self
+            table.frame = self.view.frame
+            table.tableFooterView = UIView(frame: .zero)
+            table.backgroundColor = .black
+            table.register(tableviewCell.self, forCellReuseIdentifier: NSStringFromClass(tableviewCell.self))
+            table.separatorStyle = .none
+            table.delegate = self
+            table.dataSource = self
         return table
     }()
     
-    private lazy var label: UILabel = {
+    private lazy var statusLabel: UILabel = {
         let label = UILabel()
-        label.frame = CGRect(x: 0,
-                             y: self.view.frame.height/8 * 3,
-                             width: self.view.frame.width,
-                             height: self.view.frame.height/16)
-        label.backgroundColor = .black
-        label.textColor = .white
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: CGFloat(label.frame.height * 0.8))
-        label.text = "Loading..."
+            label.frame = CGRect(x: 0,
+                                 y: self.view.frame.minY - (self.navigationController?.navigationBar.frame.height ?? 0),
+                                 width: self.view.frame.width,
+                                 height: self.view.frame.height/20)
+            label.center = self.view.center
+            label.backgroundColor = .black
+            label.textColor = .lightGray
+            label.textAlignment = .center
+            label.font = UIFont.systemFont(ofSize: CGFloat(label.frame.height * 0.8))
+            label.text = "Loading..."
         return label
     }()
     
+    init(searchWord:String){
+        self.searchWord = searchWord
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavUI()
         setupUI()
         loadCharacters()
     }
@@ -67,15 +77,21 @@ class CharacterListViewController: UIViewController {
         super.viewDidLayoutSubviews()
         if #available(iOS 11.0, *){
             let window = UIApplication.shared.keyWindow
-            let bottom = window?.safeAreaInsets.bottom
-            tableView.frame.size.height = self.view.frame.height - (bottom ?? 0)
-            tableView.rowHeight = tableView.frame.height/4
+            let bottom = window?.safeAreaInsets.bottom ?? 0
+            let top = (window?.safeAreaInsets.top ?? 0) + (self.navigationController?.navigationBar.frame.height ?? 0)
+            self.characterListView.frame.origin.y = top
+            self.characterListView.frame.size.height = self.view.frame.height - top - bottom
+            self.characterListView.rowHeight = characterListView.frame.height/4
         }
     }
     
+    private func setupNavUI(){
+        self.title = " "
+    }
+    
     private func setupUI(){
-        view.backgroundColor = .black
-        view.addSubview(label)
+        self.view.backgroundColor = .black
+        self.view.addSubview(statusLabel)
     }
     
     private func loadCharacters(){
@@ -86,7 +102,6 @@ class CharacterListViewController: UIViewController {
             case .success:
                 weakself.characters = result
                 if weakself.characters.count != 0 {
-                    weakself.view.addSubview(weakself.tableView)
                     weakself.state = .Result
                 } else {
                     weakself.state = .NotFound
@@ -100,35 +115,32 @@ class CharacterListViewController: UIViewController {
 
 
 extension CharacterListViewController:UITableViewDataSource{
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return characters.count
+        return self.characters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(tableviewCell.self), for: indexPath) as! tableviewCell
-        cell.selectionStyle = UITableViewCell.SelectionStyle.none
-        cell.setImage(size: CGRect(x:0,
-                                   y:0,
-                                   width:self.tableView.bounds.width,
-                                   height:self.tableView.rowHeight * 0.99))
-        cell.setName(size: CGRect(x: self.tableView.bounds.width/20,
-                                  y: self.tableView.rowHeight/2,
-                                  width: self.tableView.bounds.width/20 * 18,
-                                  height: self.tableView.rowHeight/2),
-                     text: characters[indexPath.row].name)
-        cell.setGradation(size: CGRect(x: 0,
-                                       y: 0,
-                                       width: self.tableView.bounds.width,
-                                       height: self.tableView.rowHeight * 0.99))
-        cell.loadImage(imageURL: characters[indexPath.row].thumbnail.url)
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
+            cell.setImage(size: CGRect(x:0,
+                                       y:0,
+                                       width:self.characterListView.bounds.width,
+                                       height:self.characterListView.rowHeight * 0.99))
+            cell.setName(size: CGRect(x: self.characterListView.bounds.width/20,
+                                      y: self.characterListView.rowHeight/2,
+                                      width: self.characterListView.bounds.width/20 * 18,
+                                      height: self.characterListView.rowHeight/2),
+                         text: self.characters[indexPath.row].name)
+            cell.loadImage(imageURL: self.characters[indexPath.row].thumbnail.url)
         return cell
     }
 }
 
 extension CharacterListViewController:UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let characterDetailVC = CharacterDetailViewController(characterID: characters[indexPath.row].id, imageURL:characters[indexPath.row].thumbnail.url,characterName:characters[indexPath.row].name,characterDescription:characters[indexPath.row].description)
+        let characterDetailVC = CharacterDetailViewController(imageURL: self.characters[indexPath.row].thumbnail.url,
+                                                              characterName: self.characters[indexPath.row].name,
+                                                              characterDescription: self.characters[indexPath.row].description)
         self.navigationController?.pushViewController(characterDetailVC, animated: true)
     }
 }

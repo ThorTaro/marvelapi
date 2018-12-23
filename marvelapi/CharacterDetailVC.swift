@@ -10,12 +10,11 @@ import UIKit
 import Kingfisher
 
 class CharacterDetailViewController: UIViewController {
-    private var characterID:Int = 0
     private var imageURL:URL?
     private var characterName:String = "Character Name"
     private var characterDescription:String = "Character description"
     
-    private lazy var characterIcon:UIImageView = {
+    private lazy var characterIcon: UIImageView = {
         let myImageView = UIImageView()
             myImageView.frame = CGRect(x: self.view.frame.width/4,
                                        y: self.nameLabel.frame.minY - self.view.frame.width/2,
@@ -26,7 +25,7 @@ class CharacterDetailViewController: UIViewController {
         return myImageView
     }()
     
-    private lazy var characterImageView:UIImageView = {
+    private lazy var backImageView: UIImageView = {
         let myImageView = UIImageView()
             myImageView.frame = self.view.frame
             myImageView.backgroundColor = .black
@@ -35,21 +34,21 @@ class CharacterDetailViewController: UIViewController {
         return myImageView
     }()
     
-    private lazy var nameLabel:UILabel = {
+    private lazy var nameLabel: UILabel = {
         let label = UILabel()
             label.frame = CGRect(x: self.view.frame.width/20,
                                  y: self.view.frame.height/2,
                                  width: self.view.frame.width/20 * 18,
                                  height: self.view.frame.height/20 * 2)
-            label.text = "Character Name"
             label.numberOfLines = 0
             label.backgroundColor = .clear
             label.textColor = .white
             label.font = UIFont.systemFont(ofSize: CGFloat(self.view.frame.height/24))
+            label.text = "Character Name"
         return label
     }()
     
-    private lazy var descriptionLabel:UITextView = {
+    private lazy var descriptionLabel: UITextView = {
         let textView = UITextView()
             textView.frame = CGRect(x: self.view.frame.width/20,
                                     y: nameLabel.frame.maxY,
@@ -63,9 +62,7 @@ class CharacterDetailViewController: UIViewController {
         return textView
     }()
     
-    
-    init(characterID:Int, imageURL: URL, characterName:String, characterDescription:String) {
-        self.characterID = characterID
+    init(imageURL: URL, characterName:String, characterDescription:String) {
         self.imageURL = imageURL
         self.characterName = characterName
         self.characterDescription = characterDescription
@@ -79,11 +76,6 @@ class CharacterDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
-        self.setImage()
-        self.setBlur()
-        self.setName()
-        self.setDescriptionView()
-        self.loadIcon()
     }
     
     override func viewDidLayoutSubviews() {
@@ -97,28 +89,32 @@ class CharacterDetailViewController: UIViewController {
     
     private func setupUI(){
         self.view.backgroundColor = .black
-        self.navigationController?.navigationBar.topItem?.title = " "
-        self.view.addSubview(characterImageView)
+        self.setBackImage()
+        self.setBlur()
+        self.setName()
+        self.setDescription()
+        self.setIcon()
     }
     
-    private func loadIcon(){
+    private func setIcon(){
         self.view.addSubview(characterIcon)
         guard let url = imageURL else { return }
         self.characterIcon.kf.indicatorType = .activity
         self.characterIcon.kf.setImage(with: url)
     }
     
-    private func setImage(){
+    private func setBackImage(){
+        self.view.addSubview(backImageView)
         guard let url = imageURL else { return }
-        self.characterImageView.kf.indicatorType = .activity
-        self.characterImageView.kf.setImage(with: url)
+        self.backImageView.kf.indicatorType = .activity
+        self.backImageView.kf.setImage(with: url)
     }
     
     private func setBlur(){
         let blurEffect = UIBlurEffect(style: .dark)
         let visualEffectView = UIVisualEffectView(effect: blurEffect)
-        visualEffectView.alpha = 0.9
-        visualEffectView.frame = characterImageView.frame
+            visualEffectView.alpha = 0.9
+            visualEffectView.frame = backImageView.frame
         self.view.addSubview(visualEffectView)
     }
     
@@ -127,7 +123,7 @@ class CharacterDetailViewController: UIViewController {
         self.view.addSubview(nameLabel)
     }
     
-    private func setDescriptionView(){
+    private func setDescription(){
         self.descriptionLabel.text = self.characterDescription == "" ? "No descriptiion": self.characterDescription
         self.view.addSubview(descriptionLabel)
     }
