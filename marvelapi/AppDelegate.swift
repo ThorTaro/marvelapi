@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         navigationController = UINavigationController(rootViewController:viewController)
         self.window?.rootViewController = navigationController
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.isTranslucent = true
         self.window?.makeKeyAndVisible()
         return true
     }
