@@ -7,27 +7,37 @@
 		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
+			<key>orderHint</key>
+			<integer>0</integer>
 		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>Moya.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>Pods-marvelapi.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>Result.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
