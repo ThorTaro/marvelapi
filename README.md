@@ -45,3 +45,11 @@ For example, "spider", "spi".
 If there is any characters that match the search word, you can find the character list with names and thumbnails of them.  
 3. Push the thumbnals.
 Tap some thumbnails, you can read description and their image.
+
+# Licence  
+MAEVEL has the copyright of these thumbnails, descriptions, names of characters and others(related by marvel).
+
+# Author  
+This project and this readme is written by ThorTaro.  
+Sorry for my bad English.  
+Thank you.
