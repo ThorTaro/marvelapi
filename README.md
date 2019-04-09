@@ -38,4 +38,10 @@ Write your API key(public and private key),
 `static private let privateKey = ******`  
 on `pulic enum Model` of `Model.swift`.
 
-# Usage
+# Usage  
+1. Input the word of some character name.  
+For example, "spider", "spi".  
+2. Push the Seatch button.  
+If there is any characters that match the search word, you can find the character list with names and thumbnails of them.  
+3. Push the thumbnals.
+Tap some thumbnails, you can read description and their image.
