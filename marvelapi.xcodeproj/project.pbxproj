@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5065AC5421CE2F8B009B5AB5 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 5065AC5321CE2F8B009B5AB5 /* home.png */; };
 		50690D9521C7A1070056B5BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50690D9421C7A1070056B5BA /* AppDelegate.swift */; };
 		50690D9721C7A1070056B5BA /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50690D9621C7A1070056B5BA /* SearchVC.swift */; };
 		50690D9C21C7A1080056B5BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50690D9B21C7A1080056B5BA /* Assets.xcassets */; };
@@ -24,7 +23,6 @@
 /* Begin PBXFileReference section */
 		0BC95CA1513C211217063C58 /* Pods-marvelapi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelapi.release.xcconfig"; path = "Target Support Files/Pods-marvelapi/Pods-marvelapi.release.xcconfig"; sourceTree = "<group>"; };
 		2D222A0D148B30600A5653ED /* Pods_marvelapi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marvelapi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5065AC5321CE2F8B009B5AB5 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		50690D9121C7A1070056B5BA /* marvelapi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marvelapi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50690D9421C7A1070056B5BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50690D9621C7A1070056B5BA /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 		50690D9321C7A1070056B5BA /* marvelapi */ = {
 			isa = PBXGroup;
 			children = (
-				5065AC5321CE2F8B009B5AB5 /* home.png */,
 				50690D9421C7A1070056B5BA /* AppDelegate.swift */,
 				50690D9621C7A1070056B5BA /* SearchVC.swift */,
 				50690DB121C7A2A40056B5BA /* CharacterListVC.swift */,
@@ -142,6 +139,7 @@
 				TargetAttributes = {
 					50690D9021C7A1070056B5BA = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -169,7 +167,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				50690D9C21C7A1080056B5BA /* Assets.xcassets in Resources */,
-				5065AC5421CE2F8B009B5AB5 /* home.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,8 +376,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Taro.marvelapi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "marvelapi/Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -399,8 +396,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Taro.marvelapi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "marvelapi/Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
