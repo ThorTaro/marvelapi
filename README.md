@@ -29,8 +29,13 @@ https://developer.marvel.com
 I tested this project on iPhone XR, and work correctly.  
 And if you want to change the background image on `SearchVC.swift`, you need to get another image.
 
-# Usage
+# Set up
 1. **Get your marvel comic api key.**  
 Create your account and get the marvel comic API key at https://developer.marvel.com  
 2. **Fix `Model.swift`.**  
-Write your API key(public and private key) on  `Model.swift`,
+Write your API key(public and private key),  
+`static private let publicKey = ******` and  
+`static private let privateKey = ******`  
+on `pulic enum Model` of `Model.swift`.
+
+# Usage
