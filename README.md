@@ -10,7 +10,7 @@ Here is the demo.
 
 # Requirement  
 ## Language  
-This project is coded by Swift4 and Objcective-C(a little)
+This project is coded by Swift4 and Objcective-C(little a bit)
 
 ## Library  
 I used these library,  
@@ -39,6 +39,9 @@ Write your API key(public and private key),
 on `pulic enum Model` of `Model.swift`.
 
 # Usage  
+**NOTE**  
+To run this project on xcode, you should qiit xcode once and type `open marvelapi.xcworkspace` on your terminal.  
+(Due to CocoaPods)
 1. Input the word of some character name.  
 For example, "spider", "spi".  
 2. Push the Seatch button.  
