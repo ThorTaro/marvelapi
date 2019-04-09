@@ -26,7 +26,7 @@ To get these API key, you create the account and publish these key at
 https://developer.marvel.com
 
 ## Other  
-I tested this project on iPhone XR(iOS12.2), and work correctly.  
+I tested this project on iPhone XR(iOS12.2) and XCode(ver.10.2) and it works correctly.
 And if you want to change the background image on `SearchVC.swift`, you need to get another image.
 
 # Set up
