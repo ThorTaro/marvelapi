@@ -13,7 +13,7 @@ class SearchViewController: UIViewController {
         let imageView = UIImageView()
             imageView.frame = self.view.frame
             imageView.contentMode = .scaleAspectFill
-            imageView.image = UIImage(named: "home")
+            imageView.image = UIImage(named: "home_free")
         return imageView
     }()
     
