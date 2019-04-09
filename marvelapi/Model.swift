@@ -10,8 +10,8 @@ import Foundation
 import Moya
 
 public enum Model {
-    static private let publicKey = "Marvel comic API Public Key"
-    static private let privateKey = "Marvel comic API Private Key"
+    static private let publicKey = "45b6b4bb029056072b78f8c88c1a8b95"
+    static private let privateKey = "e9c679c23238a5867f1ac9f8dfef052761bfe0ae"
     
     case search(String)
 }
